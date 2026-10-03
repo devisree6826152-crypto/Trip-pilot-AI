@@ -1,0 +1,245 @@
+import { LanguageOption, TravelPhrase } from "../types";
+
+export const SUPPORTED_LANGUAGES: LanguageOption[] = [
+  { code: "en", name: "English", flag: "🇬🇧", voiceCode: "en-US" },
+  { code: "te", name: "Telugu", flag: "🇮🇳", nativeName: "తెలుగు", voiceCode: "te-IN" },
+  { code: "hi", name: "Hindi", flag: "🇮🇳", nativeName: "हिन्दी", voiceCode: "hi-IN" },
+  { code: "ta", name: "Tamil", flag: "🇮🇳", nativeName: "தமிழ்", voiceCode: "ta-IN" },
+  { code: "kn", name: "Kannada", flag: "🇮🇳", nativeName: "ಕನ್ನಡ", voiceCode: "kn-IN" },
+  { code: "ml", name: "Malayalam", flag: "🇮🇳", nativeName: "മലയാളം", voiceCode: "ml-IN" },
+  { code: "bn", name: "Bengali", flag: "🇮🇳", nativeName: "বাংলা", voiceCode: "bn-IN" },
+  { code: "mr", name: "Marathi", flag: "🇮🇳", nativeName: "मराठी", voiceCode: "mr-IN" },
+  { code: "kok", name: "Konkani", flag: "🇮🇳", nativeName: "कोंकणी", voiceCode: "hi-IN" },
+  { code: "ja", name: "Japanese", flag: "🇯🇵", nativeName: "日本語", voiceCode: "ja-JP" },
+  { code: "ko", name: "Korean", flag: "🇰🇷", nativeName: "한국어", voiceCode: "ko-KR" },
+  { code: "fr", name: "French", flag: "🇫🇷", nativeName: "Français", voiceCode: "fr-FR" },
+  { code: "es", name: "Spanish", flag: "🇪🇸", nativeName: "Español", voiceCode: "es-ES" },
+];
+
+export const DESTINATION_LANGUAGE_MAP: Record<string, { code: string; name: string; flag: string }> = {
+  goa: { code: "kok", name: "Konkani", flag: "🇮🇳" },
+  sikkim: { code: "ne", name: "Nepali", flag: "🇮🇳" },
+  jaipur: { code: "hi", name: "Hindi", flag: "🇮🇳" },
+  rajasthan: { code: "hi", name: "Hindi", flag: "🇮🇳" },
+  kerala: { code: "ml", name: "Malayalam", flag: "🇮🇳" },
+  delhi: { code: "hi", name: "Hindi", flag: "🇮🇳" },
+  mumbai: { code: "mr", name: "Marathi", flag: "🇮🇳" },
+  kashmir: { code: "hi", name: "Hindi", flag: "🇮🇳" },
+  hyderabad: { code: "te", name: "Telugu", flag: "🇮🇳" },
+  bangalore: { code: "kn", name: "Kannada", flag: "🇮🇳" },
+  chennai: { code: "ta", name: "Tamil", flag: "🇮🇳" },
+  kolkata: { code: "bn", name: "Bengali", flag: "🇮🇳" },
+  tokyo: { code: "ja", name: "Japanese", flag: "🇯🇵" },
+  seoul: { code: "ko", name: "Korean", flag: "🇰🇷" },
+  paris: { code: "fr", name: "French", flag: "🇫🇷" },
+  madrid: { code: "es", name: "Spanish", flag: "🇪🇸" },
+};
+
+export const SITUATION_PHRASES: TravelPhrase[] = [
+  // 🍽️ Restaurant
+  {
+    id: "phr-rest-1",
+    category: "Restaurant",
+    english: "A table for three, please.",
+    translations: {
+      te: { text: "ముగ్గురి కోసం ఒక టేబుల్ ఇవ్వండి, దయచేసి.", pronunciation: "Mugguri kosam oka table ivvandi, dayachesi." },
+      hi: { text: "तीन लोगों के लिए एक टेबल चाहिए, कृपया।", pronunciation: "Teen logon ke liye ek table chahiye, kripya." },
+      ta: { text: "மூன்று பேருக்கு ஒரு மேஜை வேண்டும், தயவுசெய்து.", pronunciation: "Moondru perukku oru mejai vendum, thayavuseydhu." },
+      kn: { text: "ಮೂವರಿಗೆ ಒಂದು ಟೇಬಲ್ ನೀಡಿ, ದಯವಿಟ್ಟು.", pronunciation: "Moovarige ondu table needi, dayavittu." },
+      ml: { text: "മൂന്നു പേർക്ക് ഒരു ടേബിൾ ദയവായി തരൂ.", pronunciation: "Moonnu perkku oru table dayavayi tharoo." },
+      bn: { text: "তিনজনের জন্য একটি টেবিল দিন, দয়া করে।", pronunciation: "Tinjoner jonno ekti table din, doya kore." },
+      mr: { text: "तीन लोकांसाठी एक टेबल द्या, कृपया.", pronunciation: "Teen lokansathi ek table dya, krupaya." },
+      ja: { text: "3人用のテーブルをお願いします。", pronunciation: "Sannin-yō no tēburu o onegaishimasu.", literal: "Table for 3 people, please." },
+      ko: { text: "3명 자리 부탁드립니다.", pronunciation: "Sam-myeong jari 부탁드립니다." },
+      fr: { text: "Une table pour trois personnes, s'il vous plaît.", pronunciation: "Oon tah-bluh poor twah per-sun, seel voo pleh." },
+      es: { text: "Una mesa para tres personas, por favor.", pronunciation: "Oo-nah meh-sah pah-rah trehs per-soh-nas, por fah-vor." },
+      kok: { text: "तेगां खातीर टेबल मेळतलो का?", pronunciation: "Tegan khatir table meltolo ka?" },
+    },
+  },
+  {
+    id: "phr-rest-2",
+    category: "Restaurant",
+    english: "Do you have vegetarian options?",
+    translations: {
+      te: { text: "మీ దగ్గర శాకాహార వంటకాలు ఉన్నాయా?", pronunciation: "Mee daggara shakahara vantakalu unnaya?" },
+      hi: { text: "क्या आपके पास शाकाहारी विकल्प हैं?", pronunciation: "Kya aapke paas shakahari vikalp hain?" },
+      ta: { text: "உங்களிடம் சைவ உணவுகள் உள்ளதா?", pronunciation: "Ungalidam saiva unavugal ulladha?" },
+      kn: { text: "ನಿಮ್ಮಲ್ಲಿ ಸಸ್ಯಾಹಾರಿ ಆಯ್ಕೆಗಳಿವೆಯೇ?", pronunciation: "Nimmalli sasyahari aaykegaliveye?" },
+      ml: { text: "ഇവിടെ സസ്യാഹാര ഓപ്ഷനുകൾ ഉണ്ടോ?", pronunciation: "Ivide sasyahara options undo?" },
+      bn: { text: "আপনার কি নিরামিষ অপশন আছে?", pronunciation: "Apanar ki niramish option ache?" },
+      mr: { text: "तुमच्याकडे शाकाहारी पर्याय आहेत का?", pronunciation: "Tumchyakade shakahari paryay aahet ka?" },
+      ja: { text: "ベジタリアン料理はありますか？", pronunciation: "Bejitarian ryōri wa arimasu ka?", literal: "Is there vegetarian food?" },
+      ko: { text: "채식 메뉴가 있나요?", pronunciation: "Chaeshik menyuga itnayo?" },
+      fr: { text: "Avez-vous des options végétariennes?", pronunciation: "Ah-vay voo dayz op-syon vay-zhay-tah-ryenn?" },
+      es: { text: "¿Tienen opciones vegetarianas?", pronunciation: "Tyeh-nen op-syoh-nes veh-heh-tah-ryah-nas?" },
+      kok: { text: "हांगा शाकाहारी जेवण मेळटलो का?", pronunciation: "Hanga shakahari jevon meltolo ka?" },
+    },
+  },
+  {
+    id: "phr-rest-3",
+    category: "Restaurant",
+    english: "Can we have the bill, please?",
+    translations: {
+      te: { text: "దయచేసి బిల్లు ఇవ్వండి.", pronunciation: "Dayachesi billu ivvandi." },
+      hi: { text: "कृपया बिल दे दीजिए।", pronunciation: "Kripya bill de dijiye." },
+      ta: { text: "தயவுசெய்து பில் தர முடியுமா?", pronunciation: "Thayavuseydhu bill thara mudiyuma?" },
+      kn: { text: "ದಯವಿಟ್ಟು ಬಿಲ್ಲು ಕೊಡಿ.", pronunciation: "Dayavittu billu kodi." },
+      ml: { text: "ദയവായി ബില്ല് തരൂ.", pronunciation: "Dayavayi bill tharoo." },
+      bn: { text: "দয়া করে বিলটা দিন।", pronunciation: "Doya kore billta din." },
+      mr: { text: "कृपया बिल द्या.", pronunciation: "Krupaya bill dya." },
+      ja: { text: "お会計をお願いします。", pronunciation: "O-kaikei o onegaishimasu." },
+      ko: { text: "계산서 주세요.", pronunciation: "Gyesanseo juseyo." },
+      fr: { text: "L'addition, s'il vous plaît.", pronunciation: "Lah-dee-syon, seel voo pleh." },
+      es: { text: "La cuenta, por favor.", pronunciation: "Lah kwen-tah, por fah-vor." },
+      kok: { text: "बिल द्यात, कृपा करून।", pronunciation: "Bill dyat, kripa karun." },
+    },
+  },
+  {
+    id: "phr-rest-4",
+    category: "Restaurant",
+    english: "Does this contain peanuts or seafood?",
+    translations: {
+      te: { text: "దీనిలో పల్లీలు లేదా సీఫుడ్ ఉందా?", pronunciation: "Deenilo palleelu leda seafood unda?" },
+      hi: { text: "क्या इसमें मूंगफली या सीफूड है?", pronunciation: "Kya ismein moongphali ya seafood hai?" },
+      ta: { text: "இதில் கடலை அல்லது கடல் உணவு உள்ளதா?", pronunciation: "Idhil kadalai alladhu kadal unavu ulladha?" },
+      kn: { text: "ಇದರಲ್ಲಿ ಕಡಲೆಕಾಯಿ ಅಥವಾ ಸಮುದ್ರಾಹಾರ ಇದೆಯೇ?", pronunciation: "Idaralli kadalekaayi athava samudrahara ideye?" },
+      ja: { text: "これにはピーナッツやシーフードが入っていますか？", pronunciation: "Kore ni wa pīnattsu ya shīfūdo ga haitte imasu ka?" },
+      ko: { text: "이 요리에 땅콩이나 해산물이 들어가나요?", pronunciation: "I yorie ttangkongina haesanmuri deoroganayo?" },
+      kok: { text: "हातूंत निस्ते वा मुंगफली आसा का?", pronunciation: "Hatunt niste va moongfali asa ka?" },
+    },
+  },
+
+  // 🚕 Taxi
+  {
+    id: "phr-taxi-1",
+    category: "Taxi",
+    english: "Please take me to the airport.",
+    translations: {
+      te: { text: "దయచేసి నన్ను విమానాశ్రయానికి తీసుకెళ్లండి.", pronunciation: "Dayachesi nannu vimanasrayaniki theeskellandi." },
+      hi: { text: "कृपया मुझे एयरपोर्ट ले चलिए।", pronunciation: "Kripya mujhe airport le chaliye." },
+      ta: { text: "தயவுசெய்து என்னை விமான நிலையத்திற்கு அழைத்துச் செல்லுங்கள்.", pronunciation: "Thayavuseydhu ennai vimana nilaiyathirku azhaithu sellungal." },
+      kn: { text: "ದಯವಿಟ್ಟು ನನ್ನನ್ನು ವಿಮಾನ ನಿಲ್ದಾಣಕ್ಕೆ ಕರೆದೊಯ್ಯಿರಿ.", pronunciation: "Dayavittu nannannu vimana nildanakke karedoyyiri." },
+      ml: { text: "ദയവായി എന്നെ എയർപോർട്ടിലേക്ക് കൊണ്ടുപോകൂ.", pronunciation: "Dayavayi enne airportilekku kondupokoo." },
+      ja: { text: "空港までお願いします。", pronunciation: "Kūkō made onegaishimasu." },
+      ko: { text: "공항으로 가주세요.", pronunciation: "Gonghangeuro gajuseyo." },
+      fr: { text: "Emmenez-moi à l'aéroport, s'il vous plaît.", pronunciation: "Ahm-nay mwah ah lah-ay-roh-por, seel voo pleh." },
+      kok: { text: "माका विमानतळाचेर व्हर।", pronunciation: "Maka vimantalacher vhor." },
+    },
+  },
+  {
+    id: "phr-taxi-2",
+    category: "Taxi",
+    english: "How much will it cost to get to the hotel?",
+    translations: {
+      te: { text: "హోటల్‌కు వెళ్లడానికి ఎంత ఖర్చవుతుంది?", pronunciation: "Hotel-ku velladaniki entha kharchavutundi?" },
+      hi: { text: "होटल जाने का कितना किराया लगेगा?", pronunciation: "Hotel jaane ka kitna kiraya lagega?" },
+      ta: { text: "ஹோட்டலுக்குச் செல்ல எவ்வளவு செலவாகும்?", pronunciation: "Hotelukku sella evvalavu selavagum?" },
+      kn: { text: "ಹೋಟೆಲ್‌ಗೆ ಹೋಗಲು ಎಷ್ಟು ವೆಚ್ಚವಾಗುತ್ತದೆ?", pronunciation: "Hotelge hogalu eshtu vecchavaguttade?" },
+      ja: { text: "ホテルまでいくらかかりますか？", pronunciation: "Hoteru made ikura kakarimasu ka?" },
+      kok: { text: "होटलांत वचपाक कितले रुपया जातले?", pronunciation: "Hotlant vochpak kitle rupya zatle?" },
+    },
+  },
+
+  // 🏨 Hotel
+  {
+    id: "phr-hotel-1",
+    category: "Hotel",
+    english: "I have a reservation under my name.",
+    translations: {
+      te: { text: "నా పేరు మీద ఒక బుకింగ్ ఉంది.", pronunciation: "Naa peru meeda oka booking undi." },
+      hi: { text: "मेरे नाम पर एक बुकिंग है।", pronunciation: "Mere naam par ek booking hai." },
+      ta: { text: "என் பெயரில் ஒரு முன்பதிவு உள்ளது.", pronunciation: "En peyaril oru munpadhivu ulladhu." },
+      kn: { text: "ನನ್ನ ಹೆಸರಿನಲ್ಲಿ ಕಾಯ್ದಿರಿಸುವಿಕೆ ಇದೆ.", pronunciation: "Nanna hesarinalli kaydirisuvike ide." },
+      ja: { text: "予約しています。", pronunciation: "Yoyaku shite imasu." },
+      kok: { text: "म्हज्या नावार बुकिंग आसा।", pronunciation: "Mhajya navar booking asa." },
+    },
+  },
+
+  // 🗺️ Directions
+  {
+    id: "phr-dir-1",
+    category: "Directions",
+    english: "Where is the nearest railway station?",
+    translations: {
+      te: { text: "అత్యంత సమీపంలో ఉన్న రైల్వే స్టేషన్ ఎక్కడ ఉంది?", pronunciation: "Atyanta sameepamlo unna railway station ekkada undi?" },
+      hi: { text: "सबसे नजदीकी रेलवे स्टेशन कहां है?", pronunciation: "Sabse najdeeki railway station kahan hai?" },
+      ta: { text: "அருகிலுள்ள ரயில் நிலையம் எங்கே உள்ளது?", pronunciation: "Arugilulla railway nilaiyam enge ulladhu?" },
+      kn: { text: "ಅತ್ಯಂತ ಹತ್ತಿರದ ರೈಲ್ವೆ ನಿಲ್ದಾಣ ಎಲ್ಲಿದೆ?", pronunciation: "Atyanta hattirada railway nildana ellide?" },
+      ml: { text: "ഏറ്റവും അടുത്തുള്ള റെയിൽവേ സ്റ്റേഷൻ എവിടെയാണ്?", pronunciation: "Ettavum aduthulla railway station evideyanu?" },
+      bn: { text: "নিকটতম রেলওয়ে স্টেশন কোথায়?", pronunciation: "Nikatatama railway station kothay?" },
+      mr: { text: "सर्वात जवळचे रेल्वे स्टेशन कुठे आहे?", pronunciation: "Sarvat javalche railway station kuthe aahe?" },
+      ja: { text: "最寄りの駅はどこですか？", pronunciation: "Moyori no eki wa doko desu ka?", literal: "Nearest station is where?" },
+      ko: { text: "가장 가까운 지하철역이 어디인가요?", pronunciation: "Gajang gakkaun jihacheolyeogi eodiingayo?" },
+      fr: { text: "Où est la gare la plus proche?", pronunciation: "Oo eh lah gar lah ploo prosh?" },
+      kok: { text: "లాगींचो रेल्वे स्टेशन खंय आसा?", pronunciation: "Lagincho railway station khuy asa?" },
+    },
+  },
+
+  // 🚨 Emergency & Medical
+  {
+    id: "phr-emg-1",
+    category: "Emergency",
+    english: "I need urgent medical help!",
+    isEmergency: true,
+    translations: {
+      te: { text: "నాకు వెంటనే వైద్య సహాయం కావాలి!", pronunciation: "Naaku ventane vaidya sahayam kaavali!" },
+      hi: { text: "मुझे तुरंत मेडिकल सहायता चाहिए!", pronunciation: "Mujhe turant medical sahaita chahiye!" },
+      ta: { text: "எனக்கு உடனடியாக மருத்துவ உதவி தேவை!", pronunciation: "Enakku udanadiyaga maruthuva udhavi thevai!" },
+      kn: { text: "ನನಗೆ ತುರ್ತು ವೈದ್ಯಕೀಯ ನೆರವು ಬೇಕು!", pronunciation: "Nanage thurtu vaidyakeeya neravu beku!" },
+      ml: { text: "എനിക്ക് അടിയന്തിര വൈദ്യസഹായം വേണം!", pronunciation: "Enikku adiyanthira vaidya sahayam venam!" },
+      ja: { text: "緊急の医療助けが必要です！", pronunciation: "Kinkyū no iryō tasuke ga hitsuyō desu!" },
+      ko: { text: "긴급 의료 도움이 필요합니다!", pronunciation: "Gingeub uiryo doumi pillyohamnida!" },
+      fr: { text: "J'ai besoin d'une aide médicale urgente!", pronunciation: "Zhay buh-zwahn doon ehd may-dee-kahl oor-zhahnt!" },
+      kok: { text: "माका त्त्वरित वैजकी मदत जाय!", pronunciation: "Maka tvarit vaijki madat zai!" },
+    },
+  },
+  {
+    id: "phr-emg-2",
+    category: "Medical",
+    english: "I am having trouble breathing.",
+    isEmergency: true,
+    translations: {
+      te: { text: "నాకు శ్వాస తీసుకోవడంలో ఇబ్బందిగా ఉంది.", pronunciation: "Naaku shvasa theeskovadamlo ibbandiga undi." },
+      hi: { text: "मुझे सांस लेने में तकलीफ हो रही है।", pronunciation: "Mujhe saans lene mein takleef ho rahi hai." },
+      ta: { text: "எனக்கு மூச்சு விடுவதில் சிரமம் உள்ளது.", pronunciation: "Enakku moochu viduvathil siramam ulladhu." },
+      kn: { text: "ನನಗೆ ಉಸಿರಾಡಲು ತೊಂದರೆಯಾಗುತ್ತಿದೆ.", pronunciation: "Nanage usiraadalu tondareyaaguttide." },
+      ja: { text: "息をするのが苦しいです。", pronunciation: "Iki o suru no ga kurushii desu." },
+      ko: { text: "숨을 쉬기 어렵습니다.", pronunciation: "Sumeul swigi eoryeopseumnida." },
+      kok: { text: "माका श्वास घेवपाक त्रास जाता।", pronunciation: "Maka shvas ghevpak tras zata." },
+    },
+  },
+];
+
+export const CAMERA_OCR_PRESETS = [
+  {
+    id: "preset-menu",
+    title: "🍜 Restaurant Menu (Japanese / Regional)",
+    category: "Menu",
+    imagePlaceholder: "Japanese Ramen & Izakaya Menu Board",
+    detectedItems: [
+      { raw: "豚骨ラーメン - ¥1,200", translated: "Tonkotsu Pork Ramen — ₹680 / ¥1,200", detail: "Rich pork bone broth, tender chashu pork, ramen noodles" },
+      { raw: "ベジタブル味噌ラーメン - ¥1,000", translated: "Vegetarian Miso Ramen — ₹560 / ¥1,000", detail: "Soybean broth, sweet corn, bamboo shoots, tofu (100% Veg)" },
+      { raw: "焼き餃子 (6個) - ¥500", translated: "Pan-Fried Gyoza Dumplings (6 pcs) — ₹280 / ¥500", detail: "Crispy bottom pan-fried pork & cabbage dumplings" },
+    ],
+  },
+  {
+    id: "preset-sign",
+    title: "🚉 Train Direction Sign (Japanese)",
+    category: "Street Sign",
+    imagePlaceholder: "Tokyo Station Platform Direction Sign",
+    detectedItems: [
+      { raw: "JR山手線 新宿・渋谷方面", translated: "JR Yamanote Line — Shinjuku & Shibuya Direction", detail: "Platform 2. Next train arriving in 3 mins." },
+      { raw: "エレベーター・車椅子出口", translated: "Elevator & Wheelchair Accessible Exit", detail: "Follow green signage 50m ahead." },
+    ],
+  },
+  {
+    id: "preset-notice",
+    title: "🏨 Hotel Check-In Notice (French)",
+    category: "Hotel Notice",
+    imagePlaceholder: "Paris Boutique Hotel Reception Board",
+    detectedItems: [
+      { raw: "Le petit-déjeuner est servi de 7h00 à 10h30", translated: "Breakfast is served from 7:00 AM to 10:30 AM", detail: "Located in 1st floor courtyard dining salon." },
+      { raw: "Wifi gratuit: HotelGuest / Code: Paris2026", translated: "Free Wi-Fi: HotelGuest / Password: Paris2026", detail: "High-speed optical fiber network." },
+    ],
+  },
+];
